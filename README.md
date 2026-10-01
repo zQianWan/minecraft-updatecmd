@@ -9,7 +9,7 @@
 ![License](https://img.shields.io/badge/License-MIT-blue)
 
 ---
-B站 https://b23.tv/V2a0dQk
+B站传送门 https://b23.tv/V2a0dQk
 ---
 
 ## 这是什么
