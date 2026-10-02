@@ -3,12 +3,16 @@
 	"id": "updatecmd",
 	"version": "${version}",
 	"name": "UpdateCmd",
-	"description": "添加 /update 指令：用两个坐标确定一个长方体，对区域内每个坐标执行一次方块更新。当前实现 nc（Neighbor Changed，让该坐标自身的方块收到一次 NC 更新）。",
+	"description": "添加 /update 指令：用两个坐标框出一个长方体，对区域批量刷方块更新。nc 模式让区域内每个坐标自身的方块收到一次 NC 更新；pp 模式跳过空气，把每个非空气方块的 6 个邻居各当作一次更新核做一次 PP 更新（形状更新）。",
 	"authors": [
-		"dshwork"
+		"zQianWan"
 	],
-	"contact": {},
-	"license": "CC0-1.0",
+	"contact": {
+		"homepage": "https://github.com/zQianWan/minecraft-updatecmd",
+		"sources": "https://github.com/zQianWan/minecraft-updatecmd",
+		"issues": "https://github.com/zQianWan/minecraft-updatecmd/issues"
+	},
+	"license": "MIT",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
@@ -16,8 +20,8 @@
 		]
 	},
 	"depends": {
-		"fabricloader": ">=0.19.3",
-		"minecraft": "~26.2",
+		"fabricloader": "${fabricloader_range}",
+		"minecraft": "${minecraft_range}",
 		"java": ">=25",
 		"fabric-api": "*"
 	}

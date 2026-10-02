@@ -81,11 +81,11 @@ public final class UpdateCommand {
 
 		source.sendSuccess(() -> Component.literal(String.format(Locale.ROOT,
 				"已执行 pp 更新：扫描 %d 个坐标（跳过空气 %d、未加载/越界 %d），"
-						+ "作为更新核执行 %d 次（核跳过 %d），耗时 %d ms",
+						+ "让目标方块收到 %d 次形状更新（邻居未加载跳过 %d 次），耗时 %d ms",
 				result.scanned(), result.airSkipped(), result.unloadedSkipped(),
-				result.coresRun(), result.coresSkipped(), result.millis())), true);
+				result.shapeUpdates(), result.shapeUpdatesSkipped(), result.millis())), true);
 
-		return (int) Math.min(result.coresRun(), Integer.MAX_VALUE);
+		return (int) Math.min(result.shapeUpdates(), Integer.MAX_VALUE);
 	}
 
 	private static long volumeOf(BoxRegion region) throws CommandSyntaxException {
